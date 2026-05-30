@@ -1,28 +1,28 @@
-# aluno.py
-
 class Aluno:
-def **init**(self, nome):
-self.nome = nome
-self.notas = []
+    def __init__(self, nome):
+        self.nome = nome
+        self.notas = []
 
-```
-def adicionar_nota(self, nota):
-    if nota < 0 or nota > 10:
-        raise ValueError("Nota inválida")
-    self.notas.append(nota)
+    def adicionar_nota(self, nota):
+        if nota < 0 or nota > 10:
+            raise ValueError("Nota inválida")
 
-def calcular_media(self):
-    if not self.notas:
-        return 0
-    return sum(self.notas) / len(self.notas)
+        self.notas.append(nota)
 
-def verificar_situacao(self):
-    media = self.calcular_media()
+    def calcular_media(self):
+        if not self.notas:
+            return 0
 
-    if media >= 7:
-        return "Aprovado"
-    elif media >= 5:
-        return "Recuperação"
-    else:
-        return "Reprovado"
-```
+        return sum(self.notas) / len(self.notas)
+
+    def verificar_situacao(self):
+        media = self.calcular_media()
+
+        if media >= 7:
+            return "Aprovado"
+
+        elif media >= 5:
+            return "Recuperação"
+
+        else:
+            return "Reprovado"
